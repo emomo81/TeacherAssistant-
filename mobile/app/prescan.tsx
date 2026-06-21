@@ -1,6 +1,6 @@
 // TeacherAssistant / MarkScan — Pre-scan setup (pick component, see remaining students)
 import React from 'react';
-import { ScrollView, Text, View } from 'react-native';
+import { SafeAreaView, ScrollView, Text, View } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useApp, useTheme } from '../src/AppState';
 import { MS_STUDENTS } from '../src/data';
@@ -17,7 +17,7 @@ export default function PreScan() {
   const ordered = [...remaining, ...done];
 
   return (
-    <View style={{ flex: 1, backgroundColor: c.bg }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: c.bg }}>
       <Header title="New scan session" sub="Grade 9A Mathematics" onBack={() => router.back()} />
       <ScrollView contentContainerStyle={{ padding: 16, paddingBottom: 100 }}>
         <SectionLabel style={{ marginHorizontal: 2, marginBottom: 8 }}>Component</SectionLabel>
@@ -69,6 +69,6 @@ export default function PreScan() {
       <View style={{ position: 'absolute', left: 0, right: 0, bottom: 0, padding: 16, backgroundColor: c.bg }}>
         <Btn full icon="camera" onPress={() => router.push('/scan')}>Start scanning session</Btn>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
