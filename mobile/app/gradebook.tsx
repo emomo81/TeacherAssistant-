@@ -1,6 +1,6 @@
 // TeacherAssistant / MarkScan — Grade book (spreadsheet-style table, inline edit, stats)
 import React, { useState } from 'react';
-import { Pressable, ScrollView, Text, View } from 'react-native';
+import { Pressable, SafeAreaView, SafeAreaView, ScrollView, Text, View } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useApp, useTheme } from '../src/AppState';
 import { MS_STUDENTS, msFinalMark, msGrade, Component, Student } from '../src/data';
@@ -53,7 +53,7 @@ export default function Gradebook() {
   const thBase = { backgroundColor: c.surface2, paddingVertical: 10, borderBottomWidth: 1, borderBottomColor: c.line } as const;
 
   return (
-    <View style={{ flex: 1, backgroundColor: c.bg }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: c.bg }}>
       <Header title="Grade book" sub="Grade 9A Mathematics · Third Term" onBack={() => router.back()} />
 
       <View style={{ flexDirection: 'row', gap: 8, paddingHorizontal: 16, paddingVertical: 10 }}>
@@ -165,6 +165,6 @@ export default function Gradebook() {
           </View>
         ) : null}
       </Sheet>
-    </View>
+    </SafeAreaView>
   );
 }
