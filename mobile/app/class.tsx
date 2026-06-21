@@ -1,6 +1,6 @@
 // TeacherAssistant / MarkScan — Class detail (action tiles + recent activity)
 import React from 'react';
-import { ScrollView, Text, View } from 'react-native';
+import { SafeAreaView, ScrollView, Text, View } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useApp, useTheme } from '../src/AppState';
 import { MS_CLASSES, MS_STUDENTS } from '../src/data';
@@ -49,7 +49,7 @@ export default function ClassScreen() {
   ];
 
   return (
-    <View style={{ flex: 1, backgroundColor: c.bg }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: c.bg }}>
       <Header title={cls.name} sub={`${cls.term} · ${cls.year}`} onBack={() => router.back()} />
       <ScrollView contentContainerStyle={{ padding: 16 }}>
         <FadeInView>
@@ -88,6 +88,6 @@ export default function ClassScreen() {
           ))}
         </Card>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 }
