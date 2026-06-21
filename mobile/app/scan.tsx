@@ -116,7 +116,7 @@ export default function Scan() {
   if (phase === 'camera' || phase === 'zone' || phase === 'processing') {
     const camGranted = perm?.granted;
     return (
-      <View style={{ flex: 1, backgroundColor: '#0B0F16' }}>
+      <SafeAreaView style={{ flex: 1, backgroundColor: '#0B0F16' }}>
         {camGranted && phase === 'camera' ? (
           <CameraView style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }} facing="back" />
         ) : null}
@@ -209,7 +209,7 @@ export default function Scan() {
             )}
           </View>
         </SafeAreaView>
-      </View>
+      </SafeAreaView>
     );
   }
 
