@@ -1,6 +1,6 @@
 // TeacherAssistant / MarkScan — Grade book (spreadsheet-style table, inline edit, stats)
 import React, { useState } from 'react';
-import { Pressable, SafeAreaView, SafeAreaView, ScrollView, Text, View } from 'react-native';
+import { Pressable, SafeAreaView, ScrollView, Text, View } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useApp, useTheme } from '../src/AppState';
 import { MS_STUDENTS, msFinalMark, msGrade, Component, Student } from '../src/data';
