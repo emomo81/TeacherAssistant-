@@ -1,6 +1,6 @@
 // TeacherAssistant / MarkScan — Export & sync (cloud backup, Google Sheets, Excel)
 import React, { useRef, useState } from 'react';
-import { Animated, Easing, Text, View } from 'react-native';
+import { Animated, Easing, SafeAreaView, Text, View } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useApp, useTheme } from '../src/AppState';
 import { MS_STUDENTS, msFinalMark } from '../src/data';
@@ -43,7 +43,7 @@ export default function ExportScreen() {
   const doXls = () => { setXls('busy'); setTimeout(() => setXls('done'), 1300 * durMul); };
 
   return (
-    <View style={{ flex: 1, backgroundColor: c.bg }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: c.bg }}>
       <Header title="Export & sync" sub="Grade 9A Mathematics · Third Term" onBack={() => router.back()} />
       <View style={{ flex: 1, padding: 16 }}>
         {/* cloud sync */}
@@ -149,6 +149,6 @@ export default function ExportScreen() {
           </Text>
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
